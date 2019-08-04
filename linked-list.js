@@ -1,7 +1,6 @@
 
 function Node(data) {
     this.data = data;
-    // this.previous = null;
     this.next = null;
 }
 
@@ -58,16 +57,14 @@ LinkedList.prototype.shift = function () {
     }
 }
 
-LinkedList.prototype.splice = function (index) {
+//单向链表按索引删除一个或者添加一个节点
+LinkedList.prototype.splice = function (index, node) {
     let dummyFirst = {next: null};
+    let count = 0;
     let pre = dummyFirst;
     let next = null;
-    let count = 0;
     let temp = this.first;
-    while (index !== count) {
-        if (!temp.next) {
-            return;
-        }
+    while (index !== count && temp.next) {
         next = temp.next;
         temp.next = null;
         pre.next = temp;
@@ -75,15 +72,20 @@ LinkedList.prototype.splice = function (index) {
         temp = next;
         count++;
     }
-    if (!temp.next) {
-        this.last = pre;
-    } else {
+    if (!node) {
+        if (!temp.next) {
+            this.last = pre;
+        }
         pre.next = temp.next;
+    } else {
+        node.next = temp;
+        pre.next = node;
     }
     this.first = dummyFirst.next;
     return temp;
 }
 
+//单向链表选择排序
 LinkedList.prototype.sort = function (key, cb) {
     let dummyFirst = {next: null};
     let pre = dummyFirst;
@@ -102,6 +104,7 @@ LinkedList.prototype.sort = function (key, cb) {
     return dummyFirst.next;
 }
 
+//单向链表的反转
 LinkedList.prototype.reverse = function () {
     if (!this.first || !this.first.next) {
         return;
@@ -141,7 +144,8 @@ console.log(JSON.parse(JSON.stringify(linkedList.first)));
 // console.log('pop', pop);
 // linkedList.push(4);
 // linkedList.reverse();
-const node = linkedList.splice(3);
-console.log('node', node);
+linkedList.splice(4, new Node(5));
+// const node = linkedList.splice(3);
+// console.log('node', node);
 console.log(linkedList.last);
 console.log(linkedList.first);
