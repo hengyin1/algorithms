@@ -35,6 +35,10 @@ function insertSort(array, compare) {//插入排序
     return array;
 }
 
+function quicksort(params) {//快排
+    
+}
+
 const array = [6, 5, 4, 7, 3, 8, 2, 1];
 console.log(bubbleSort(array));
 console.log(insertSort(array));
