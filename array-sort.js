@@ -61,8 +61,42 @@ function partition(array, left, right, cmp) {
     return i;
 }
 
+function mergeSort(array, left, right, cmp) {//归并排序
+    if (right - left <= 1) {
+        return;
+    }
+    const mid = Math.floor((left + right) / 2);
+    mergeSort(array, left, mid, cmp);
+    mergeSort(array, mid, right, cmp);
+    merge(array, left, right, mid, cmp);
+}
+
+function merge(array, left, right, mid, cmp) {
+    let temp = [];
+    let i = left;
+    let j = mid;
+    while (i < mid && j < right) {
+        if (cmp(array[i], array[j]) < 0) {
+            temp.push(array[i]);
+            i++;
+        } else {
+            temp.push(array[j]);
+            j++;
+        }
+    }
+    if (i < mid) {
+        temp = [...temp, ...array.slice(i, mid)];
+    } else if (j < right) {
+        temp = [...temp, ...array.slice(j, right)];
+    }
+    for (let n = 0; n < temp.length; n++) {
+        array[left + n] = temp[n];
+    }
+}
+
 const array = [6, 5, 4, 7, 3, 8, 2, 1];
 // console.log(bubbleSort(array));
 // console.log(insertSort(array));
-quickSort(array, 0, array.length - 1, comparator)
+// quickSort(array, 0, array.length - 1, comparator);
+mergeSort(array, 0, array.length, comparator);
 console.log(array);
