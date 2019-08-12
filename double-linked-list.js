@@ -80,25 +80,6 @@ LinkedList.prototype.splice = function (index, node) {
     }
 }
 
-//单向链表选择排序
-LinkedList.prototype.sort = function (key, cb) {
-    let dummyFirst = {next: null};
-    let pre = dummyFirst;
-    let next = null;
-    let temp = this.first;
-    while (temp) { 
-        next = temp.next;
-        while (pre.next && cb(temp[key], pre.next[key])) {
-            pre = pre.next;
-        }
-        temp.next = pre.next;
-        pre.next = temp;
-        pre = dummyFirst;
-        temp = next;
-    }
-    return dummyFirst.next;
-}
-
 //双向链表的反转
 LinkedList.prototype.reverse = function () {
     if (!this.first || !this.first.next) {
@@ -118,20 +99,59 @@ LinkedList.prototype.reverse = function () {
     this.last = first;
 }
 
+function comparator(a, b) {
+    return a - b;
+}
+
+function quickSort(leftNode, rightNode, cmp, key) {
+    const {pivot, left, right} = partition(leftNode, rightNode, cmp, key);
+    if (left != pivot.pre) {
+        quickSort(left, pivot.pre, cmp, key);
+    }
+    if (right != pivot.next) {
+        quickSort(pivot.next, right, cmp, key);
+    }
+}
+
+function partition(leftNode, rightNode, cmp, key) {
+    let pivot = rightNode;
+    pivot.next = null;
+    pivot.pre = null;
+    let left = null;
+    let right = null;
+    let next = null;
+    let temp = leftNode;
+    while (temp) {
+        next = temp.next;
+        if (cmp(temp[key], pivot[key]) > 0) {
+            temp.next = pivot.next;
+            pivot.next = temp;
+            temp.pre = pivot;
+            if (!right) {
+                right = temp;
+            }
+        } else {
+            temp.pre = pivot.pre;
+            pivot.pre = temp;
+            temp.next = pivot;
+            if (!left) {
+                left = temp;
+            }
+        }
+        temp = next;
+    }
+    console.log('pivot', pivot);
+    console.log('left', left);
+    console.log('right', right);
+    return {pivot, left, right};
+}
+
 const linkedList = new LinkedList();
+linkedList.push(4);
 linkedList.push(3);
 linkedList.push(2);
 linkedList.push(1);
-linkedList.unshift(4);
 // console.log(JSON.parse(JSON.stringify(linkedList.first)));
-// let sort = linkedList.sort("data", function (a, b) {
-//     if (a >= b) {
-//         return 1;
-//     } else {
-//         return 0;
-//     }
-// })
-// console.log("sort", sort);
 // console.log({...linkedList.first});
 // console.log(Object.assign({}, linkedList.first));
 // const shift = linkedList.shift();
@@ -140,8 +160,9 @@ linkedList.unshift(4);
 // console.log('pop', pop);
 // linkedList.push(4);
 // linkedList.reverse();
-linkedList.splice(4, new Node(5));
+// linkedList.splice(4, new Node(5));
 // const node = linkedList.splice(2);
 // console.log('node', node);
 // console.log(linkedList.last);
+quickSort(linkedList.first, linkedList.last, comparator, "data");
 console.log(linkedList.first);
