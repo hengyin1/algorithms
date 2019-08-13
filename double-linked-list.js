@@ -105,12 +105,15 @@ function comparator(a, b) {
 
 function quickSort(leftNode, rightNode, cmp, key) {
     const {pivot, left, right} = partition(leftNode, rightNode, cmp, key);
-    if (left != pivot.pre) {
-        quickSort(left, pivot.pre, cmp, key);
-    }
-    if (right != pivot.next) {
-        quickSort(pivot.next, right, cmp, key);
-    }
+    // console.log('pivot', pivot);
+    // console.log('left', left);
+    // console.log('right', right);
+    // if (left != pivot.pre) {
+    //     quickSort(left, pivot.pre, cmp, key);
+    // }
+    // if (right != pivot.next) {
+    //     quickSort(pivot.next, right, cmp, key);
+    // }
 }
 
 function partition(leftNode, rightNode, cmp, key) {
@@ -121,7 +124,7 @@ function partition(leftNode, rightNode, cmp, key) {
     let right = null;
     let next = null;
     let temp = leftNode;
-    while (temp) {
+    do {
         next = temp.next;
         if (cmp(temp[key], pivot[key]) > 0) {
             temp.next = pivot.next;
@@ -139,10 +142,7 @@ function partition(leftNode, rightNode, cmp, key) {
             }
         }
         temp = next;
-    }
-    console.log('pivot', pivot);
-    console.log('left', left);
-    console.log('right', right);
+    } while (temp.next);
     return {pivot, left, right};
 }
 
