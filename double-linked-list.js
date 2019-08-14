@@ -103,23 +103,22 @@ function comparator(a, b) {
     return a - b;
 }
 
-function quickSort(leftNode, rightNode, cmp, key) {
+function quickSort(leftNode, rightNode, cmp, key) {//双向链表快排
     const {pivot, left, right} = partition(leftNode, rightNode, cmp, key);
-    // console.log('pivot', pivot);
-    // console.log('left', left);
-    // console.log('right', right);
-    // if (left != pivot.pre) {
-    //     quickSort(left, pivot.pre, cmp, key);
-    // }
-    // if (right != pivot.next) {
-    //     quickSort(pivot.next, right, cmp, key);
-    // }
+    console.log('pivot', pivot);
+    console.log('left', left);
+    console.log('right', right);
+    // console.log(left.next && left.next != pivot, right.pre && right.pre != pivot);
+    if (left && left.next && left.next != pivot) {
+        quickSort(left, pivot.pre, cmp, key);
+    }
+    if (right && right.pre && right.pre != pivot) {
+        quickSort(pivot.next, right, cmp, key);
+    }
 }
 
 function partition(leftNode, rightNode, cmp, key) {
     let pivot = rightNode;
-    pivot.next = null;
-    pivot.pre = null;
     let left = null;
     let right = null;
     let next = null;
@@ -127,18 +126,23 @@ function partition(leftNode, rightNode, cmp, key) {
     do {
         next = temp.next;
         if (cmp(temp[key], pivot[key]) > 0) {
+            temp.next.pre = temp.pre;
+            if (temp.pre) {
+                temp.pre.next = next;
+            }
             temp.next = pivot.next;
+            if (pivot.next) {
+                pivot.next.pre = temp;
+            }
             pivot.next = temp;
             temp.pre = pivot;
             if (!right) {
                 right = temp;
             }
         } else {
-            temp.pre = pivot.pre;
-            pivot.pre = temp;
-            temp.next = pivot;
             if (!left) {
                 left = temp;
+                linkedList.first = temp;
             }
         }
         temp = next;
@@ -147,10 +151,10 @@ function partition(leftNode, rightNode, cmp, key) {
 }
 
 const linkedList = new LinkedList();
-linkedList.push(4);
 linkedList.push(3);
-linkedList.push(2);
 linkedList.push(1);
+linkedList.push(2);
+linkedList.push(4);
 // console.log(JSON.parse(JSON.stringify(linkedList.first)));
 // console.log({...linkedList.first});
 // console.log(Object.assign({}, linkedList.first));
