@@ -102,19 +102,16 @@ LinkedList.prototype.reverse = function () {
 function comparator(a, b) {
     return a - b;
 }
-let count = 0;
+
 function quickSort(leftNode, rightNode, cmp, key) {//双向链表快排
-    if (count++ > 1) {
-        return;
-    }
     const {pivot, left, right} = partition(leftNode, rightNode, cmp, key);
     if (left && cmp(linkedList.first[key], left[key]) > 0) {
         linkedList.first = left;
     }
     console.log('pivot', pivot);
-    console.log('left', left);
-    console.log('right', right);
-    console.log(left && left.next && left.next != pivot, right && right.pre && right.pre != pivot);
+    // console.log('left', left);
+    // console.log('right', right);
+    // console.log(left && left.next && left.next != pivot, right && right.pre && right.pre != pivot);
     if (left && left.next && left.next != pivot) {
         quickSort(left, pivot.pre, cmp, key);
     }
@@ -137,12 +134,11 @@ function partition(leftNode, rightNode, cmp, key) {
                 temp.pre.next = next;
             }
             
-            
-            temp.pre = pivot;
             temp.next = pivot.next;
             if (pivot.next) {
                 pivot.next.pre = temp;
             }
+            temp.pre = pivot;
             pivot.next = temp;
             if (!right) {
                 right = temp;
@@ -153,15 +149,17 @@ function partition(leftNode, rightNode, cmp, key) {
             }
         }
         temp = next;
-    } while (temp.next);
+    } while (temp != pivot && temp.next);
     return {pivot, left, right};
 }
 
 const linkedList = new LinkedList();
-linkedList.push(3);
+linkedList.push(6);
 linkedList.push(1);
-linkedList.push(5);
+linkedList.push(3);
+linkedList.push(7);
 linkedList.push(2);
+linkedList.push(5);
 linkedList.push(4);
 // console.log(JSON.parse(JSON.stringify(linkedList.first)));
 // console.log({...linkedList.first});
