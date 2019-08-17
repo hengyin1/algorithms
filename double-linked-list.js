@@ -1,3 +1,6 @@
+function comparator(a, b) {
+    return a - b;
+}
 
 function Node(data) {
     this.data = data;
@@ -80,6 +83,28 @@ LinkedList.prototype.splice = function (index, node) {
     }
 }
 
+//环检查
+LinkedList.prototype.hasCycle = function () {
+    if (!this.first || !this.first.next) {
+        return false;
+    }
+    let fast = this.first.next;
+    while (fast) {
+        fast = fast.next;
+        if (!fast) {
+            return false;
+        }
+        
+        let slow = this.first;
+        while (slow && slow != fast.pre) {
+            if (fast == slow) {
+                return true;
+            }
+            slow = slow.next;
+        }
+    }
+}
+
 //双向链表的反转
 LinkedList.prototype.reverse = function () {
     if (!this.first || !this.first.next) {
@@ -99,11 +124,8 @@ LinkedList.prototype.reverse = function () {
     this.last = first;
 }
 
-function comparator(a, b) {
-    return a - b;
-}
-
-function quickSort(leftNode, rightNode, cmp, key) {//双向链表快排
+//双向链表快排
+LinkedList.prototype.quickSort = function (leftNode, rightNode, cmp, key) {
     const {pivot, left, right} = partition(leftNode, rightNode, cmp, key);
     if (left && cmp(linkedList.first[key], left[key]) > 0) {
         linkedList.first = left;
@@ -113,10 +135,10 @@ function quickSort(leftNode, rightNode, cmp, key) {//双向链表快排
     // console.log('right', right);
     // console.log(left && left.next && left.next != pivot, right && right.pre && right.pre != pivot);
     if (left && left.next && left.next != pivot) {
-        quickSort(left, pivot.pre, cmp, key);
+        this.quickSort(left, pivot.pre, cmp, key);
     }
     if (right && right.pre && right.pre != pivot) {
-        quickSort(pivot.next, right, cmp, key);
+        this.quickSort(pivot.next, right, cmp, key);
     }
 }
 
@@ -154,12 +176,12 @@ function partition(leftNode, rightNode, cmp, key) {
 }
 
 const linkedList = new LinkedList();
-linkedList.push(6);
+// linkedList.push(6);
 linkedList.push(1);
 linkedList.push(3);
-linkedList.push(7);
+// linkedList.push(7);
 linkedList.push(2);
-linkedList.push(5);
+// linkedList.push(5);
 linkedList.push(4);
 // console.log(JSON.parse(JSON.stringify(linkedList.first)));
 // console.log({...linkedList.first});
@@ -174,5 +196,8 @@ linkedList.push(4);
 // const node = linkedList.splice(2);
 // console.log('node', node);
 // console.log(linkedList.last);
-quickSort(linkedList.first, linkedList.last, comparator, "data");
-console.log(linkedList.first);
+// linkedList.quickSort(linkedList.first, linkedList.last, comparator, "data");
+// console.log(linkedList.first);
+// linkedList.last.next = linkedList.first.next;
+// linkedList.first.next.pre = linkedList.last;
+console.log(linkedList.hasCycle());
