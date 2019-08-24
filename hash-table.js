@@ -18,9 +18,73 @@ Hashtable.prototype.hashCode = function (val) {
       return val;
     }
     for (let i = 0; i < val.length; i++) {
-      character = val.charCodeAt(i);
+      character = val.codePointAt(i);
       hashCode = ((hashCode << 5) - hashCode) + character;
       hashCode = hashCode & hashCode;
     }
     return hashCode;
+};
+
+Hashtable.prototype.put = function (key, data) {
+    let hashCode = this.hashCode(key);
+    hashCode = hashCode % this.maxBucketCount;
+    const newNode = new Node(key, data);
+    if (this.buckets[hashCode] === undefined) {
+        this.buckets[hashCode] = newNode;
+        return;
+    }
+    if (this.buckets[hashCode].key === key) {
+        this.buckets[hashCode].data = data;
+        return;
+    }
+    let first = this.buckets[hashCode];
+    while (first.next) {
+        first = first.next;
+    }
+    first.next = newNode;
+    newNode.prev = first;
+};
+
+Hashtable.prototype.get = function (key) {
+    let hashCode = this.hashCode(key);
+    hashCode = hashCode % this.maxBucketCount;
+    if (this.buckets[hashCode] === undefined) {
+        return undefined;
+    }
+    let first = this.buckets[hashCode];
+    while (first) {
+        if (first.key === key) {
+            return first.data;
+        }
+        first = first.next;
+    }
+    return undefined;
+};
+
+Hashtable.prototype.remove = function (key) {
+    let hashCode = this.hashCode(key);
+    hashCode = hashCode % this.maxBucketCount;
+    if (this.buckets[hashCode] === undefined) {
+        return undefined;
+    }
+    let first = this.buckets[hashCode];
+    if (!first.prev &&  !first.next) {
+        const data = first.data;
+        this.data[hashCode] = undefined;
+        return data;
+    }
+    while (first) {
+        const next = first.next;
+        if (first.key === key) {
+            if (first.next) {
+                first.next.prev = first.prev;
+            }
+            if (first.prev) {
+                first.prev.next = first.next;
+            }
+            return first.data;
+        }
+        first = next;
+    }
+    return undefined;
 };
