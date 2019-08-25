@@ -88,3 +88,16 @@ Hashtable.prototype.remove = function (key) {
     }
     return undefined;
 };
+
+let hashtable = new Hashtable();
+hashtable.put("abc", 1);
+hashtable.put("abe", 2);
+hashtable.put("acd", 3);
+hashtable.put("acf", 4);
+hashtable.put("acg", 5);
+hashtable.put("bcf", 6);
+hashtable.put("12", 7);
+hashtable.put("34", 8);
+hashtable.put("24", 9);
+console.log(hashtable.buckets);
+console.log(hashtable.get("acd"));
