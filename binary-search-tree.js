@@ -28,3 +28,24 @@ BinaryTree.prototype.insert = function (value, current) {
         this.insert(value, current[insertKey]);
     }
 }
+
+BinaryTree.prototype.find = function (value) {
+    if (this.root === null) {
+        return -1;
+    }
+    let current = this.root;
+    while (current) {
+        if (current.value === value) {
+            return current;
+        } else if (current.value > value) {
+            current = current._left;
+        } else {
+            current = current._right;
+        }
+    }
+    return -1;
+}
+
+BinaryTree.prototype.remove = function (value) {
+    
+}
