@@ -51,22 +51,29 @@ BinaryTree.prototype.remove = function (value) {
         return null;
     }
     let current = this.root;
-    while (current) {
-        if (current.value === value) {
-            if (current._left !== null && current._right !== null) {
-                
-            } else if (current._left !== null) {
-                
-            } else if (current._right !== null) {
-                
-            } else {
-                
-            }
-        } else if (current.value > value) {
+    while (current && current.value !== value) {
+        if (current.value > value) {
             current = current._left;
         } else {
             current = current._right;
         }
     }
-    return null;
+    if (current === null) {
+        return null;
+    }
+
+    if (current._left !== null && current._right !== null) {
+        let childNode = current._right;
+        while (childNode._left) {
+            childNode = childNode._left;
+        }
+        current.value = childNode.value;
+        childNode._parent._left = null;
+    } else if (current._left !== null) {
+        
+    } else if (current._right !== null) {
+        
+    } else {
+
+    }
 }
