@@ -31,7 +31,7 @@ BinaryTree.prototype.insert = function (value, current) {
 
 BinaryTree.prototype.find = function (value) {
     if (this.root === null) {
-        return -1;
+        return null;
     }
     let current = this.root;
     while (current) {
@@ -43,9 +43,30 @@ BinaryTree.prototype.find = function (value) {
             current = current._right;
         }
     }
-    return -1;
+    return null;
 }
 
 BinaryTree.prototype.remove = function (value) {
-    
+    if (this.root === null) {
+        return null;
+    }
+    let current = this.root;
+    while (current) {
+        if (current.value === value) {
+            if (current._left !== null && current._right !== null) {
+                
+            } else if (current._left !== null) {
+                
+            } else if (current._right !== null) {
+                
+            } else {
+                
+            }
+        } else if (current.value > value) {
+            current = current._left;
+        } else {
+            current = current._right;
+        }
+    }
+    return null;
 }
