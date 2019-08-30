@@ -94,6 +94,22 @@ BinaryTree.prototype.remove = function (value) {
 }
 
 //二叉树前序遍历
+BinaryTree.prototype.inorder = function (callback) {
+    this._inorder(this.root, callback);
+}
+
+BinaryTree.prototype._inorder = function (current, callback) {
+    if (!current) {
+        return;
+    }
+    if (typeof(callback) == "function") {
+        callback(current);
+    }
+    this._inorder(current.left, callback);
+    this._inorder(current.right, callback);
+}
+
+//二叉树中序遍历
 BinaryTree.prototype.preorder = function (callback) {
     this._preorder(this.root, callback);
 }
@@ -103,10 +119,26 @@ BinaryTree.prototype._preorder = function (current, callback) {
         return;
     }
     this._preorder(current.left, callback);
-    if (callback) {
+    if (typeof(callback) == "function") {
         callback(current);
     }
     this._preorder(current.right, callback);
+}
+
+//二叉树的后序遍历
+BinaryTree.prototype.postorder = function (callback) {
+    this._postorder(this.root, callback);
+}
+
+BinaryTree.prototype._postorder = function (current, callback) {
+    if (!current) {
+        return;
+    }
+    this._postorder(current.left, callback);
+    this._postorder(current.right, callback);
+    if (typeof(callback) == "function") {
+        callback(current);
+    }
 }
 
 let binaryTree = new BinaryTree();
@@ -128,7 +160,7 @@ console.log("binaryTree", binaryTree);
 // binaryTree.remove(3);
 // console.log("binaryTree", binaryTree);
 
-binaryTree.preorder(node => {
+binaryTree.inorder(node => {
     console.log(node.value);
 });
 
