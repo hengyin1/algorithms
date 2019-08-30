@@ -141,6 +141,17 @@ BinaryTree.prototype._postorder = function (current, callback) {
     }
 }
 
+BinaryTree.prototype.getHeight = function () {
+    return  this._getHeight(this.root);
+}
+
+BinaryTree.prototype._getHeight = function (node) {
+    if (!node) {
+        return 0;
+    }
+    return 1 + Math.max(this._getHeight(node.left), this._getHeight(node.right));
+}
+
 let binaryTree = new BinaryTree();
 binaryTree.insert(100);
 binaryTree.insert(200);
@@ -163,6 +174,8 @@ console.log("binaryTree", binaryTree);
 binaryTree.inorder(node => {
     console.log(node.value);
 });
+
+console.log("height", binaryTree.getHeight());
 
 
 
