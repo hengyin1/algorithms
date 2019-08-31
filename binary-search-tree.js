@@ -141,6 +141,7 @@ BinaryTree.prototype._postorder = function (current, callback) {
     }
 }
 
+//计算二叉树高度
 BinaryTree.prototype.getHeight = function () {
     return  this._getHeight(this.root);
 }
@@ -150,6 +151,33 @@ BinaryTree.prototype._getHeight = function (node) {
         return 0;
     }
     return 1 + Math.max(this._getHeight(node.left), this._getHeight(node.right));
+}
+
+//二叉查找树最小值
+BinaryTree.prototype.findMin = function () {
+    if (!this.root) {
+        return;
+    }
+    return this._findMin(this.root);
+}
+
+BinaryTree.prototype._findMin = function (node) {
+    if (!node.left) {
+        return node;
+    }
+    return this._findMin(node.left);
+}
+
+//二叉查找树最大值
+BinaryTree.prototype.findMax = function () {
+    if (!this.root) {
+        return;
+    }
+    let current = this.root;
+    while (current.right) {
+        current = current.right;
+    }
+    return current;
 }
 
 let binaryTree = new BinaryTree();
@@ -176,6 +204,13 @@ binaryTree.inorder(node => {
 });
 
 console.log("height", binaryTree.getHeight());
+
+console.log("findMin", binaryTree.findMin().value);
+
+console.log("findMax", binaryTree.findMax().value);
+
+
+
 
 
 
