@@ -180,6 +180,17 @@ BinaryTree.prototype.findMax = function () {
     return current;
 }
 
+BinaryTree.prototype.isBalanced = function () {
+    return this._isBalanced(this.root);
+}
+
+BinaryTree.prototype._isBalanced = function (current) {
+    if (!current) {
+        return true;
+    }
+    return this._isBalanced(current.left) && this._isBalanced(current.right) && Math.abs(this.getHeight(current.left) - this.getHeight(current.right)) <= 1;
+}
+
 let binaryTree = new BinaryTree();
 binaryTree.insert(100);
 binaryTree.insert(200);
@@ -208,6 +219,9 @@ console.log("height", binaryTree.getHeight());
 console.log("findMin", binaryTree.findMin().value);
 
 console.log("findMax", binaryTree.findMax().value);
+
+console.log("isBalanced", binaryTree.isBalanced());
+
 
 
 
