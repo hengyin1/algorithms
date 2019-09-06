@@ -54,3 +54,7 @@ Heap.prototype.heapify = function () {
         }
     }
 }
+
+Heap.prototype.sort = function () {
+    
+}
