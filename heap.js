@@ -32,29 +32,44 @@ Heap.prototype.removeTop = function () {
     }
     const pop = this._heap.pop();
     this._heap[1] = pop;
-    this.heapify();
+    this.heapify(this._heap.length - 1, 1);
 }
 
 //从上往下堆话
-Heap.prototype.heapify = function () {
-    let count = 1;
-    while (true) {
-        if (count * 2 < this._heap.length && this._cmp(this._heap[count], this._heap[count * 2]) < 0) {
-            const _value = this._heap[count];
-            this._heap[count] = this._heap[count * 2];
-            this._heap[count * 2] = _value;
-            count = count * 2;
-        } else if (count * 2 + 1 < this._heap.length && this._cmp(this._heap[count], this._heap[count * 2 + 1]) < 0) {
-            const _value = this._heap[count];
-            this._heap[count] = this._heap[count * 2 + 1];
-            this._heap[count * 2 + 1] = _value;
-            count = count * 2 + 1;
-        } else {
-            return;
+Heap.prototype.heapify = function (endIndex, startIndex) {
+  while (true) {
+        let maxIndex = startIndex;
+        if (startIndex * 2 <= endIndex && this._cmp(this._heap[startIndex], this._heap[startIndex * 2]) < 0) {
+          maxIndex = startIndex * 2;
         }
+        if (startIndex * 2 + 1 <= endIndex && this._cmp(this._heap[maxIndex], this._heap[startIndex * 2 + 1]) < 0) {
+          maxIndex = startIndex * 2 + 1;
+        } 
+        if (maxIndex == startIndex) {
+          return;
+        }
+        const _value = this._heap[startIndex];
+        this._heap[startIndex] = this._heap[maxIndex];
+        this._heap[maxIndex] = _value;
+        startIndex = maxIndex;
     }
 }
 
 Heap.prototype.sort = function () {
-    
+  let count = this._heap.length - 1;
+  while (count > 1) {
+    const value = this._heap[count];
+    this._heap[count] = this._heap[1];
+    this._heap[1] = value;
+    count--;
+    this.heapify(count, 1);
+  }
 }
+
+const heap = new Heap();
+const arr = [1, 9, 20, 3, 6, 13, 10, 8, 53, 23, 35];
+arr.forEach(item => {
+  heap.insert(item);
+});
+heap.sort();
+console.log('heap', heap._heap);
