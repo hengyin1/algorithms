@@ -15,6 +15,9 @@ function orderByWeight(input) {
   for (let i = 0; i < weights.length; i++) {
     for (let j = i + 1; j < weights.length; j++) {
       if (weights[i] > weights[j]) {
+        const _tem = weights[i];
+        weights[i] = weights[j];
+        weights[j] = _tem;
         const tem = numbers[i];
         numbers[i] = numbers[j];
         numbers[j] = tem;
@@ -29,4 +32,4 @@ function orderByWeight(input) {
 }
 
 
-orderByWeight('65 56 74')
+orderByWeight('65 56 74 9999 5678 4567 12034 012569')
