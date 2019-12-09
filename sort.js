@@ -28,8 +28,17 @@ function orderByWeight(input) {
   const result= numbers.join(' ');
   console.log('result', result);
   
-  return result
+  return result;
 }
 
+function quickSort(array, left, right) {
+  const mid = partition(array, left, right);
+  if (left < mid - 1) {
+    quickSort(array, left, mid - 1);
+  } 
+  if (right > mid) {
+    quickSort(array, mid, right);
+  }
+}
 
-orderByWeight('65 56 74 9999 5678 4567 12034 012569')
+orderByWeight('65 56 74 9999 5678 4567 12034 012569');

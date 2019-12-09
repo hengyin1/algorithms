@@ -40,8 +40,8 @@ function quickSort(array, left, right, cmp) {//快排
     if (left < mid - 1) {
         quickSort(array, left, mid - 1, cmp);
     }
-    if (right > mid + 1) {
-        quickSort(array, mid + 1, right, cmp);
+    if (right > mid) {
+        quickSort(array, mid, right, cmp);
     }
 }
 
