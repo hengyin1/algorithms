@@ -1,0 +1,14 @@
+[
+  {
+    "name" : "lookup",
+    "params" : [
+      "7-12.png"
+    ]
+  },
+  {
+    "name" : "multipleBlend",
+    "params" : [
+      "ovl_clr_mtp6.png"
+    ]
+  }
+]

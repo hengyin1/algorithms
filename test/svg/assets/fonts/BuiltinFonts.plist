@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>bundleName</key>
+		<string>Cursive Fonts</string>
+		<key>bundleIdentifier</key>
+		<string>com.2012gpower.instaframe.cursivefonts</string>
+		<key>bundleDescription</key>
+		<string>6 fonts</string>
+		<key>price</key>
+		<string>$1.99</string>
+		<key>bundleThumbnail</key>
+		<string>Cursive Fonts</string>
+		<key>type</key>
+		<string>svg</string>
+		<key>storage</key>
+		<string>builtin</string>
+		<key>contentURL</key>
+		<string>http://media.gpowers.net/store/frame/content/file/zip/Cursive Fonts.zip</string>
+		<key>thumbnails</key>
+		<array>
+			<string>F_BrannbollNySwashes</string>
+			<string>F_HelloBeautiful</string>
+			<string>F_HelloBeautiful-Marker</string>
+			<string>F_Mustang-Roman</string>
+			<string>F_Celestial</string>
+			<string>F_ ArtBrewery</string>
+		</array>
+	</dict>
+</array>
+</plist>

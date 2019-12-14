@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body onload="main()">
+    <canvas id="glcanvas" width="640" height="480"></canvas>
+  </body>
+
+  <script type="text/javascript">
+    function main() {
+      const canvas = document.getElementById('glcanvas');
+      const gl = canvas.getContext("webgl");
+      if (!gl) {
+        alert("gl");
+        return;
+      }
+      gl.clearColor(0.0, 0.0, 0.0, 1.0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+    }
+
+    // 顶点着色器
+    const vsSource = `
+    attribute vec4 aVertexPosition;
+
+    uniform mat4 uModelViewMatrix;
+    uniform mat4 uProjectionMatrix;
+
+    void main() {
+      gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+    }
+    `;
+
+    //片段着色器
+    const fsSource = `
+    void main() {
+      gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+    }
+    `;
+
+    //  初始化着色器程序，让WebGL知道如何绘制我们的数据
+    function initShaderProgram(gl, vsSource, fsSource) {
+      const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
+      const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
+      // 创建着色器程序
+      const shaderProgram = gl.createProgram();
+      gl.attachShader(shaderProgram, vertexShader);
+      gl.attachShader(shaderProgram, fragmentShader);
+      gl.linkProgram(shaderProgram);
+
+      // 创建失败， alert
+      if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+        alert('Unable to initialize the shader program: ' + gl.getProgramInfoLog(shaderProgram));
+        return null;
+      }
+
+      return shaderProgram;
+    }
+
+    // 创建指定类型的着色器，上传source源码并编译
+    function loadShader(gl, type, source) {
+      const shader = gl.createShader(type);
+
+      // Send the source to the shader object
+
+      gl.shaderSource(shader, source);
+
+      // Compile the shader program
+
+      gl.compileShader(shader);
+
+      // See if it compiled successfully
+
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        alert('An error occurred compiling the shaders: ' + gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
+      }
+
+      return shader;
+    }
+
+    const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
+
+    const programInfo = {
+      program: shaderProgram,
+      attribLocations: {
+        vertexPosition: gl.getAttribLocation(shaderProgram, 'aVertexPosition'),
+      },
+      uniformLocations: {
+        projectionMatrix: gl.getUniformLocation(shaderProgram, 'uProjectionMatrix'),
+        modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
+      },
+    };
+
+    var horizAspect = 480.0/640.0;
+
+    function initBuffers() {
+      squareVerticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
+
+      var vertices = [
+        1.0,  1.0,  0.0,
+        -1.0, 1.0,  0.0,
+        1.0,  -1.0, 0.0,
+        -1.0, -1.0, 0.0
+      ];
+
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    }
+
+    function drawScene() {
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+      perspectiveMatrix = makePerspective(45, 640.0/480.0, 0.1, 100.0);
+
+      loadIdentity();
+      mvTranslate([-0.0, 0.0, -6.0]);
+
+      gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
+      gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+      setMatrixUniforms();
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    }
+
+    function loadIdentity() {
+      mvMatrix = Matrix.I(4);
+    }
+
+    function multMatrix(m) {
+      mvMatrix = mvMatrix.x(m);
+    }
+
+    function mvTranslate(v) {
+      multMatrix(Matrix.Translation($V([v[0], v[1], v[2]])).ensure4x4());
+    }
+
+    function setMatrixUniforms() {
+      var pUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+      gl.uniformMatrix4fv(pUniform, false, new Float32Array(perspectiveMatrix.flatten()));
+
+      var mvUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+      gl.uniformMatrix4fv(mvUniform, false, new Float32Array(mvMatrix.flatten()));
+    }
+  </script>
+</html>

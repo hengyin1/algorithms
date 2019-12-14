@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>templateName</key>
+            <string>M_20b_X_0_v3-03</string>
+            <key>isPaid</key>
+            <string>true</string>
+            <key>ff00ff</key>
+            		<dict>
+            			<key>fontName</key>
+            			<string>HelloBeautiful</string>
+            			<key>fontSize</key>
+            			<string>12</string>
+            			<key>textColor</key>
+            			<string>ffc600</string>
+            		</dict>
+     </dict>
+
+         <dict>
+                    <key>templateName</key>
+                    <string>M_19a_X_0_v3-03</string>
+                    <key>isPaid</key>
+                    <string>true</string>
+                    <key>laceColor</key>
+                    <string>3fb6dc</string>
+         </dict>
+
+         <dict>
+                    <key>templateName</key>
+                    <string>M_19a_X_0_v3-04</string>
+                    <key>isPaid</key>
+                    <string>true</string>
+
+                 	<key>ff0001</key>
+                 <dict>
+                 	<key>alignment</key>
+                 	<string>1</string>
+                 	<key>capital</key>
+                 	<false/>
+                 	<key>fontName</key>
+                 	<string>680-CAI978</string>
+                 	<key>fontSize</key>
+                 	<string>60</string>
+                 	<key>text</key>
+                 	<string>Yummy</string>
+                 	<key>textColor</key>
+                 	<string>000000</string>
+                 </dict>
+                 	<key>ff00ff</key>
+                 <dict>
+                 	<key>fontName</key>
+                 	<string>OCRAStd</string>
+                 	<key>fontSize</key>
+                 	<string>8</string>
+                 </dict>
+         </dict>
+
+          <dict>
+                    <key>templateName</key>
+                    <string>M_20a_X_0_v3-02</string>
+                     <key>isPaid</key>
+                     <string>true</string>
+                     <key>ff00ff</key>
+                <dict>
+                      <key>fontName</key>
+                      <string>HelloBeautiful</string>
+                      <key>fontSize</key>
+                       <string>12</string>
+              </dict>
+                      <key>laceColor</key>
+                      <string>ff0000</string>
+            </dict>
+
+                                 <dict>
+                                            <key>templateName</key>
+                                            <string>M_21a_X_0_v3-04</string>
+                                            <key>isPaid</key>
+                                            <string>true</string>
+                                            <key>ff0001</key>
+                                            <dict>
+                                            			<key>alignment</key>
+                                            			<string>0</string>
+                                            			<key>capital</key>
+                                            			<false/>
+                                            			<key>fontName</key>
+                                            			<string>520-CAI978</string>
+                                            			<key>fontSize</key>
+                                            			<string>20</string>
+                                            			<key>text</key>
+                                            			<string>Hello Winter</string>
+                                            			<key>textColor</key>
+                                            			<string>000000</string>
+                                            	</dict>
+                                            		<key>ff0002</key>
+                                            		<dict>
+                                            			<key>alignment</key>
+                                            			<string>0</string>
+                                            			<key>capital</key>
+                                            			<false/>
+                                            			<key>fontName</key>
+                                            			<string>680-CAI978</string>
+                                            			<key>fontSize</key>
+                                            			<string>12</string>
+                                            			<key>text</key>
+                                            			<string>Think Happy be happy</string>
+                                            			<key>textColor</key>
+                                            			<string>000000</string>
+                                            	</dict>
+                                            		<key>laceColor</key>
+                                            		<string>ffffff</string>
+                                        </dict>
+
+                                         <dict>
+                                                    <key>templateName</key>
+                                                    <string>M_21b_X_0_v3-02</string>
+                                                    <key>isPaid</key>
+                                                    <string>true</string>
+                                                    		<key>ff0001</key>
+                                                    		<dict>
+                                                    			<key>alignment</key>
+                                                    			<string>0</string>
+                                                    			<key>capital</key>
+                                                    			<false/>
+                                                    			<key>fontName</key>
+                                                    			<string>680-CAI978</string>
+                                                    			<key>fontSize</key>
+                                                    			<string>32</string>
+                                                    			<key>text</key>
+                                                    			<string>Sunset Glow</string>
+                                                    			<key>textColor</key>
+                                                    			<string>000000</string>
+                                                    		</dict>
+                                                    		<key>ff00ff</key>
+                                                    		<dict>
+                                                    			<key>alignment</key>
+                                                    			<string>2</string>
+                                                    		</dict>
+                                         </dict>
+
+
+        <dict>
+            <key>templateName</key>
+            <string>M_01a_X_0_v3_val-01</string>
+            <key>laceColor</key>
+            <string>ffffff</string>
+            <key>backgroundColor</key>
+            <string>ded2af</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_01a_X_0_v3_val-03</string>
+            <key>laceColor</key>
+            <string>ffffff</string>
+            <key>backgroundColor</key>
+            <string>f8d8d1</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11b_X_0_v3-01</string>
+            <key>laceColor</key>
+            <string>000000</string>
+            <key>backgroundColor</key>
+            <string>ffffff</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_07g_X_0_v3-04</string>
+            <key>foreTextConfig</key>
+
+            <dict>
+                <key>fontName</key>
+                <string>680-CAI978</string>
+                <key>text</key>
+                <string>Lucky</string>
+                <key>textColor</key>
+                <string>005046</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>45</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>2</string>
+            </dict>
+            <key>laceColor</key>
+            <string>0a6f62</string>
+            <key>backgroundColor</key>
+            <string>ddf03b</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11a_X_0_v3-02</string>
+            <key>laceColor</key>
+            <string>985831</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_08a_X_0_v3-06</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>417-CAI978</string>
+                <key>text</key>
+                <string>KEEP GOING</string>
+                <key>textColor</key>
+                <string>363636</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>28</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_08b_X_0_v3-02</string>
+            <key>laceColor</key>
+            <string>ffffff</string>
+            <key>backgroundColor</key>
+            <string>000000</string>
+        </dict>
+
+
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k1_X_0_v3-04</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>125-CAI978</string>
+                <key>text</key>
+                <string>On my way</string>
+                <key>textColor</key>
+                <string>ffffff</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>22</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>backgroundColor</key>
+            <string>ff8d71</string>
+            <key>laceColor</key>
+            <string>ffffff</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_07g1_X_0_v3-01</string>
+            <key>laceColor</key>
+            <string>ff9797</string>
+            <key>backgroundColor</key>
+            <string>d2e4e7</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_08h1_X_0_v3-01</string>
+            <key>laceColor</key>
+            <string>d1bc9d</string>
+            <key>backTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>Dahrlin</string>
+                <key>text</key>
+                <string>be Awesome</string>
+                <key>textColor</key>
+                <string>66a5b9</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>54</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_05e_X_0_v3-03</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>420-CAI978</string>
+                <key>text</key>
+                <string>DUBAI</string>
+                <key>textColor</key>
+                <string>000000</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>50</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>laceColor</key>
+            <string>0e4759</string>
+            <key>backgroundColor</key>
+            <string>f7f7eb</string>
+        </dict>
+
+        <dict>
+
+            <key>templateName</key>
+            <string>M_02b_X_0_v3-06</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>417-CAI978</string>
+                <key>text</key>
+                <string>RHYTHM OF RAIN</string>
+                <key>textColor</key>
+                <string>98553a</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>32</string>
+                <key>capital</key>
+                <true />
+            </dict>
+            <key>laceColor</key>
+            <string>e2bc9f</string>
+            <key>backgroundColor</key>
+            <string>f9edde</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_05e_X_0_v3-06</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>420-CAI978</string>
+                <key>text</key>
+                <string>PARIS</string>
+                <key>textColor</key>
+                <string>000000</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>50</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_06a_X_0_v3-06</string>
+            <key>laceColor</key>
+            <string>5c3a29</string>
+            <key>backgroundColor</key>
+            <string>e4f0f2</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_01a_X_0_v3-04</string>
+            <key>laceColor</key>
+            <string>ffffff</string>
+            <key>backgroundColor</key>
+            <string>e4f0f2</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_06f_X_0_v3-04</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>420-CAI978</string>
+                <key>text</key>
+                <string>Never give up;Never lose hope;Always have faith;It allows you to cope;Trying times will pass;As they always do;Just have patience;Your dreams will;come true.
+                </string>
+                <key>textColor</key>
+                <string>000000</string>
+                <key>numberOfLines</key>
+                <string>0</string>
+                <key>fontSize</key>
+                <string>8</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>0</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11a_X_0_v3-03</string>
+            <key>backgroundColor</key>
+            <string>6da59f</string>
+            <key>laceColor</key>
+            <string>ffeddb</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_03c1_X_0_v3-04</string>
+            <key>laceColor</key>
+            <string>4f2386</string>
+            <key>backgroundColor</key>
+            <string>d7cee3</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_04d_X_0_v3-02</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>680-CAI978</string>
+                <key>text</key>
+                <string>Coffee;Time</string>
+                <key>textColor</key>
+                <string>8eb7cc</string>
+                <key>numberOfLines</key>
+                <string>0</string>
+                <key>fontSize</key>
+                <string>25</string>
+                <key>capital</key>
+                <false />
+            </dict>
+            <key>laceColor</key>
+            <string>e7e6eb</string>
+            <key>backgroundColor</key>
+            <string>72462b</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k2_X_0_v3-02</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>125-CAI978</string>
+                <key>text</key>
+                <string>Fashion</string>
+                <key>textColor</key>
+                <string>000000</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>42</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>backgroundColor</key>
+            <string>ffffff</string>
+            <key>laceColor</key>
+            <string>b50200</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_13m_X_0_v3-02</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>549-CAI978</string>
+                <key>text</key>
+                <string>Keep Going</string>
+                <key>textColor</key>
+                <string>588c9a</string>
+                <key>numberOfLines</key>
+                <string>0</string>
+                <key>fontSize</key>
+                <string>28</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_16p_X_0_v3-02</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>520-CAI978</string>
+                <key>text</key>
+                <string>About Love</string>
+                <key>textColor</key>
+                <string>fff665</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>24</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>backgroundColor</key>
+            <string>000000</string>
+            <key>laceColor</key>
+            <string>fff665</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_16p_X_0_v3-05</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>520-CAI978</string>
+                <key>text</key>
+                <string>Happiness</string>
+                <key>textColor</key>
+                <string>1ccca1</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>24</string>
+                <key>capital</key>
+                <false/>
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>backgroundColor</key>
+            <string>fffeea</string>
+            <key>laceColor</key>
+            <string>1ccca1</string>
+        </dict>
+        <dict>
+            <key>templateName</key>
+            <string>M_11k3_X_0_v3-03</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>125-CAI978</string>
+                <key>text</key>
+                <string>Memory</string>
+                <key>textColor</key>
+                <string>edd1c8</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>34</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>backgroundColor</key>
+            <string>64242a</string>
+            <key>laceColor</key>
+            <string>edd1c8</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_12l_X_0_v3-06</string>
+            <key>backTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>420-CAI978</string>
+                <key>text</key>
+                <string>Participate in life instead of just watching it pass you by.</string>
+                <key>textColor</key>
+                <string>6c487e</string>
+                <key>numberOfLines</key>
+                <string>0</string>
+                <key>fontSize</key>
+                <string>7</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>420-CAI978</string>
+                <key>text</key>
+                <string>Enjoy life now</string>
+                <key>textColor</key>
+                <string>ffffff</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>22</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>0</string>
+            </dict>
+            <key>laceColor</key>
+            <string>cb94a2</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_16p_X_0_v3-03</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>520-CAI978</string>
+                <key>text</key>
+                <string>My Style</string>
+                <key>textColor</key>
+                <string>000000</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>24</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>backgroundColor</key>
+            <string>ffffff</string>
+            <key>laceColor</key>
+            <string>db3323</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k1_X_0_v3-02</string>
+            <key>backgroundColor</key>
+            <string>1a1715</string>
+            <key>laceColor</key>
+            <string>ffc683</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_12b_X_0_v3-03</string>
+            <key>backgroundColor</key>
+            <string>f6f6f6</string>
+            <key>laceColor</key>
+            <string>ff567a</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_15o_X_0_v3-03</string>
+            <key>laceColor - 2</key>
+            <string>6cabb6</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>420-CAI978</string>
+                <key>text</key>
+                <string>My Style</string>
+                <key>textColor</key>
+                <string>ffffff</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>24</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>laceColor</key>
+            <string>5b939d</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k1_X_0_v3-03</string>
+            <key>backgroundColor</key>
+            <string>443736</string>
+            <key>laceColor</key>
+            <string>fe865b</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_18r_X_0_v3-01</string>
+            <key>backgroundColor</key>
+            <string>ffffff</string>
+            <key>laceColor</key>
+            <string>c90e08</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_13m_X_0_v3-04</string>
+            <key>backgroundColor</key>
+            <string>ffffff</string>
+            <key>laceColor</key>
+            <string>000000</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k2_X_0_v3-05</string>
+            <key>backgroundColor</key>
+            <string>4fdbe0</string>
+            <key>laceColor</key>
+            <string>fff000</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11a_X_0_v3-01</string>
+            <key>backgroundColor</key>
+            <string>b0ecce</string>
+            <key>laceColor</key>
+            <string>6b502a</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_13m_X_0_v3-05</string>
+            <key>backgroundColor</key>
+            <string>ffffff</string>
+            <key>laceColor</key>
+            <string>000000</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11a_X_0_v3-04</string>
+            <key>laceColor</key>
+            <string>c07257</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_17q_X_0_v3-03</string>
+            <key>backgroundColor</key>
+            <string>f4beb5</string>
+            <key>laceColor</key>
+            <string>ffffff</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_13m_X_0_v3-01</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>549-CAI978</string>
+                <key>text</key>
+                <string>Keep Going</string>
+                <key>textColor</key>
+                <string>997d4d</string>
+                <key>numberOfLines</key>
+                <string>0</string>
+                <key>fontSize</key>
+                <string>28</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+            <key>laceColor</key>
+            <string>997d4d</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k1_X_0_v3-06</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>125-CAI978</string>
+                <key>text</key>
+                <string>On my way</string>
+                <key>textColor</key>
+                <string>000000</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>26</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k2_X_0_v3-03</string>
+            <key>backgroundColor</key>
+            <string>bb0000</string>
+            <key>laceColor</key>
+            <string>ffe051</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_12a_X_0_v3-02</string>
+            <key>backgroundColor</key>
+            <string>ddece9</string>
+            <key>laceColor</key>
+            <string>436033</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k1_X_0_v3-01</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>125-CAI978</string>
+                <key>text</key>
+                <string>Love Story</string>
+                <key>textColor</key>
+                <string>5c3422</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>22</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>0</string>
+            </dict>
+            <key>backgroundColor</key>
+            <string>f6f5e0</string>
+            <key>laceColor</key>
+            <string>5c3422</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_09i1_X_0_v3-04</string>
+            <key>laceColor</key>
+            <string>272c32</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>611-CAI978</string>
+                <key>text</key>
+                <string>MAGAZINE</string>
+                <key>textColor</key>
+                <string>ffffff</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>42</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_09i_X_0_v3-02</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>611-CAI978</string>
+                <key>text</key>
+                <string>MAGAZINE</string>
+                <key>textColor</key>
+                <string>ffc21f</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>39</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11b_X_0_v3-02</string>
+            <key>backgroundColor</key>
+            <string>ffffff</string>
+            <key>laceColor</key>
+            <string>000000</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_08h2_X_0_v3-01</string>
+            <key>backgroundColor</key>
+            <string>000000</string>
+            <key>laceColor</key>
+            <string>ffffff</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>Dahrlin</string>
+                <key>text</key>
+                <string>Beauty</string>
+                <key>textColor</key>
+                <string>ffffff</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>45</string>
+                <key>capital</key>
+                <false />
+                <key>alignment</key>
+                <string>0</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_14n_X_0_v3-03</string>
+            <key>backgroundColor</key>
+            <string>5e0d09</string>
+            <key>laceColor</key>
+            <string>ffd544</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_11k3_X_0_v3-02</string>
+            <key>foreTextConfig</key>
+            <dict>
+                <key>fontName</key>
+                <string>125-CAI978</string>
+                <key>text</key>
+                <string>Leisure</string>
+                <key>textColor</key>
+                <string>000000</string>
+                <key>numberOfLines</key>
+                <string>1</string>
+                <key>fontSize</key>
+                <string>30</string>
+                <key>capital</key>
+                <true />
+                <key>alignment</key>
+                <string>1</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_10j_X_0_v3-05</string>
+            <key>backgroundColor</key>
+            <string>f2edea</string>
+            <key>laceColor</key>
+            <string>41677e</string>
+        </dict>
+
+        <dict>
+            <key>templateName</key>
+            <string>M_18r_X_0_v3-03</string>
+            <key>backgroundColor</key>
+            <string>000000</string>
+            <key>laceColor</key>
+            <string>c5b64d</string>
+        </dict>
+    </array>
+</plist>

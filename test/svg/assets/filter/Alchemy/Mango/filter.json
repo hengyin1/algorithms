@@ -1,0 +1,14 @@
+[
+  {
+    "name" : "lookup",
+    "params" : [
+      "13-06.png"
+    ]
+  },
+  {
+    "name" : "hardLightBlend",
+    "params" : [
+      "ovl_clr_mtp6.png"
+    ]
+  }
+]

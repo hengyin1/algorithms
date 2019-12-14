@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <?xml version="1.0" encoding="utf-8"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+    <svg version="1.0" id="layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 320 320" style="enable-background:new 0 0 320 320;" xml:space="preserve">
+    <style type="text/css">
+      .st0{fill:#FFCE00;}
+      .st1{opacity:0.3;fill:#7DFF00;enable-background:new    ;}
+      .st2{fill:#7DFF00;}
+      .st3{opacity:0.5;enable-background:new    ;}
+      .st4{opacity:0.3;enable-background:new    ;}
+      .st5{opacity:0.9;enable-background:new    ;}
+      .st6{opacity:0.7;enable-background:new    ;}
+      .st7{opacity:0.2;}
+      .st8{opacity:0.4;}
+      .st9{opacity:0.6;}
+      .st10{opacity:0.2;enable-background:new    ;}
+      .st11{opacity:0.45;enable-background:new    ;}
+      .st12{opacity:0.8;enable-background:new    ;}
+      .st13{opacity:0.6;enable-background:new    ;}
+      .st14{enable-background:new    ;}
+      .st15{opacity:0.9;}
+    </style>
+    <g>
+      <polygon class="st0" points="227.318,7 313,7 313,186.517 197.333,164 	"/>
+      <polygon class="st0" points="7,7 220.6,7 190.6,162.517 7,126.517 	"/>
+      <polygon class="st0" points="7,133.483 122.833,156.167 92.185,313 7,313 	"/>
+      <polygon class="st0" points="128.652,157.482 312.998,193.482 312.998,312.999 98.652,312.999 	"/>
+    </g>
+  </svg> -->
+
+  <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 320 240" style="enable-background:new 0 0 320 240;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFCE00;}
+</style>
+<g id="XMLID_477_">
+	<path id="XMLID_370_" d="M153.28,25.021c38.409,0,57.619,37.996,57.619,63.329c0-12.666,32.009-63.329,64.006-57.001
+		c51.216,6.339,40.34,63.351,18.145,90.971C258.779,164.95,204.5,183.327,172.501,234c0-18.989-6.409-37.999-19.211-56.988
+		c-19.196-25.341-44.8-63.335-44.8-88.653C102.078,56.688,121.29,25.021,153.28,25.021L153.28,25.021z"/>
+	<path id="XMLID_369_" d="M80.815,119.767c-17.51,11.239-15.847,34.139-8.902,45.67c-3.479-5.763-31.935-19.432-44.78-7.198
+		c-21.597,17.873-1.032,40.634,16.649,46.698c27.293,9.361,57.051,1.838,85.507,15.523c-5.202-8.647-7.49-19.156-6.858-31.549
+		c1.808-17.141,3.06-41.921-3.863-53.43C112.813,119.186,95.388,110.408,80.815,119.767L80.815,119.767z"/>
+	<path id="XMLID_368_" d="M36.525,32.023c10.18-4.398,20.301,3.398,23.66,10.065c-1.677-3.335,0.09-20.314,9.402-22.313
+		c14.41-4.189,19.092,12.047,16.872,21.85c-3.428,15.13-15.372,26.169-17.13,43.153c-2.523-4.995-6.733-9.26-12.648-12.791
+		c-8.445-4.466-20.265-11.531-23.621-18.183C27.158,46.203,28.052,35.681,36.525,32.023L36.525,32.023z"/>
+</g>
+</svg>
+
+  <script>
+    const svgElement = document.getElementById('图层_1');
+    // console.log('svgElement', svgElement);
+    
+    const viewBox = svgElement.getAttribute('viewBox');
+    const [minX, minY, width, height] = viewBox.split(' ');
+    // console.log('viewBox', width, height);
+    let children = null;
+    const g_element = svgElement.getElementsByTagName('g');
+    if (g_element) {
+      children = g_element[0].children;
+    } else {
+      children = svgElement.children;
+    }
+    console.log('children', children);
+    const shaps = [];
+    Array.from(children).forEach(element => {
+      console.log(element.nodeName);
+      if (element.nodeName === 'polygon') {
+        // console.log(element.getAttribute('points'));
+        const points = element.getAttribute('points').split(' ');
+        // console.log('points', points);
+        const _points = points.filter(point => point.trim()).map(point => {
+          let [x, y] = point.split(',');
+          return { x: x / width, y: y / height };
+        })
+        // console.log('_points', _points);
+        shaps.push({
+          type: 'polygon',
+          points: _points
+        });
+      } else if (element.nodeName === 'path') {
+        let attribute_d = element.getAttribute('d');
+        console.log('attribute_d', attribute_d);
+        const reg = /[a-z]|[A-Z]/g;
+        const orders = attribute_d.match(reg);
+        console.log('orders', orders);
+        for (let index = 0; index < orders.length - 1; index++) {
+          const startIndex = attribute_d.indexOf(orders[index]);
+          attribute_d = attribute_d.slice(startIndex + 1);
+          const endIndex = attribute_d.indexOf(orders[index + 1]);
+          const _point  = attribute_d.substring(0, endIndex);
+          attribute_d = attribute_d.slice(endIndex);
+          console.log('_point', _point);
+          // console.log(_point.split(','));
+        }
+        // shaps.push({
+        //   type: 'path',
+        //   points: _points
+        // });
+      }
+    });
+    // console.log('shaps', shaps);
+    console.log('shaps', JSON.stringify(shaps));
+  </script>
+</body>
+</html>
