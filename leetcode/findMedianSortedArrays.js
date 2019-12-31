@@ -36,10 +36,21 @@ var findMedianSortedArrays = function(nums1, nums2) {
         }
 
         if ((nums1Length + nums2Length) % 2 === 1) return maxLeft;
+
+        let minRight = null;
+        if (i === nums1Length) {
+          minRight = nums2[j];
+        } else if (j === nums2Length) {
+          minRight = nums1[i];
+        } else {
+          minRight = Math.min(nums1[i], nums2[j]);
+        }
+
+        return (maxLeft + minRight) / 2;
       }
   };
 
   return  binarySearch((left + right) / 2);
 }; 
 
-console.log(findMedianSortedArrays([1, 2, 3], [4, 5]));
+console.log(findMedianSortedArrays([1, 2], [4, 5]));
