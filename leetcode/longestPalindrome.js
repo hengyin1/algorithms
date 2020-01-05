@@ -26,12 +26,12 @@ var longestPalindrome = function(s) {
     }
   }
 
-  for (let j = 0; j < n - 1; j++) {
-    if (s[j] === s[j + 1]) {
-      states[0][j] = j + 1;
-    } else if (j + 2 < n && s[j] === s[j + 2]) {
+  for (let j = 0; j < n - 1; j++) { 
+    if (j + 2 < n && s[j] === s[j + 2] && (s[j] !== s[j + 1] || s[j] === s[j + 1] && (s[j - 1] !== s[j] || s[j] !== s[j + 3]))) {
       states[0][j] = j + 2;
-    }
+    } else if (s[j] === s[j + 1]) {
+      states[0][j] = j + 1;
+    } 
   }
 
   for (let i = 1; i < n; i++) {
@@ -67,4 +67,4 @@ var longestPalindrome = function(s) {
   return s[0];
 };
 
-console.log(longestPalindrome("aba"))
+console.log(longestPalindrome("bbbb"));
